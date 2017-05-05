@@ -5,27 +5,42 @@ function nuevoMiembro(nombre,edad,hobbie){
 }
 
 
-const miSquad=[];
+var miSquad=[];
 
-	const gaby = new nuevoMiembro("gaby",28,"pintar");
+	var gaby = new nuevoMiembro("gaby",28,"pintar");
 	miSquad.push(gaby);
 
-	const karina = new nuevoMiembro("Karina",21,"bailar");
+	var karina = new nuevoMiembro("Karina",21,"bailar");
 	miSquad.push(karina);
 
-	const mily = new nuevoMiembro("mili",18,"ver peliculas");
-	miSquad.push(mili);
+	var mily = new nuevoMiembro("mily",18,"ver peliculas");
+	miSquad.push(mily);
 
-	const marcela = new nuevoMiembro("marcela",31,"bicicleta");
+	var marcela = new nuevoMiembro("marcela",31,"bicicleta");
 	miSquad.push(marcela);
 
-	const patricia = new nuevoMiembro("patricia",28,"cantar");
+	var patricia = new nuevoMiembro("patricia",28,"cantar");
 	miSquad.push(patricia);
 
-document.getElementById("contenedor").innerHTML=miSquad;
+document.getElementById("contenedor").innerHTML=miSquad.length;
+var pantalla = document.getElementById("contenedor");
+
+miSquad.forEach(function(el){
+		pantalla.innerHTML += "<p> Nombre: " + el.nombre + "</p>"
+		+ "<p> Edad: " + el.edad + "</p>" + "<p> Hobbie: " + el.hobbie + "</p>" + "</br>"
+
+		});
 
 
-/*Gaby Bravo, 28 años, pintar, ver animes y jugar Aion
+
+
+/*
+var titulo = document.getElementById("lista");//aqui se va imprimir
+	elementos.forEach(function(valor){ // forEach +  para que recorra
+      titulo.innerHTML += '<li>' + valor.title + '</li>';
+
+
+Gaby Bravo, 28 años, pintar, ver animes y jugar Aion
 Karina laroze, 21 años, bailar
 Mily Rivas, 18 recién cumplidos, leer, ver películas
 Marcela Orellana, 31 años, andar en bicicleta, ver series coreanas.
