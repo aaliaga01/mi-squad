@@ -36,23 +36,30 @@ contenedor.appendChild(h1);
 
 miSquad.forEach(function(el){
 
-		var divMiembro = document.createElement("div");//Se crea div
+			var divMiembro = document.createElement("div");//Se crea div
 			divMiembro.setAttribute("id","integrante");//Se le asigna una clase al div
 			contenedor.appendChild(divMiembro);//se imprime div en html
 
+			var divComent = document.createElement("div");
+			divComent.setAttribute("id","comentario");
+			contenedor.appendChild(divComent);
+
+			var divTexto= document.createElement("textarea");
+			divTexto.setAttribute("id","comentar");
+			divComent.appendChild(divTexto);
+
 			var boton = document.createElement("button");//Se crea boton
 			boton.setAttribute("id","caja-boton");
+			divTexto.setAttribute("id","comentar");
 			boton.onclick = function(){//con esto funciona al hacer click
  			alert("hellou");}
-			//document.getElementById("caja-boton").onclick();
-			//boton.setAttribute("onclick");
 			boton.innerText = "comentar";//texto que mostrara el boton
-			document.getElementById("contenedor").appendChild(boton);//Se indica donde se quiere agregar el boton creado
-			
+			document.getElementById("contenedor").appendChild(boton);//Se indica donde se quiere agregar el boton creado	
 
 		divMiembro.innerHTML += "<p> Nombre: " + el.nombre + "</br>"
 		+ "Edad: " + el.edad + " años" + "</br>" + "Hobbie: " + el.hobbie + "</p>"
 		 + "<hr>"
-
 		});
+
+
 
