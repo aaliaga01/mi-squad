@@ -33,13 +33,24 @@ var h1 = document.createElement("h1");
 h1.innerHTML = "Las Pochoclos";
 contenedor.appendChild(h1);
 
-//Se crea contenedor div para cada miembro
+
 miSquad.forEach(function(el){
-		var divMiembro = document.createElement("div");
-			divMiembro.innerHTML="";
-			contenedor.appendChild(divMiembro);
+
+		var divMiembro = document.createElement("div");//Se crea div
+			divMiembro.setAttribute("id","integrante");//Se le asigna una clase al div
+			contenedor.appendChild(divMiembro);//se imprime div en html
+
+			var boton = document.createElement("button");//Se crea boton
+			boton.setAttribute("id","caja-boton");
+			//document.getElementById("caja-boton").onclick();
+			//boton.setAttribute("onclick");
+			boton.innerText = "comentar";//texto que mostrara el boton
+			document.getElementById("contenedor").appendChild(boton);//Se indica donde se quiere agregar el boton creado
+			
 
 		divMiembro.innerHTML += "<p> Nombre: " + el.nombre + "</br>"
 		+ "Edad: " + el.edad + " años" + "</br>" + "Hobbie: " + el.hobbie + "</p>"
-		+ "<hr>"
+		 + "<hr>"
+
 		});
+
