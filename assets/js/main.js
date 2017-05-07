@@ -42,6 +42,8 @@ miSquad.forEach(function(el){
 
 			var boton = document.createElement("button");//Se crea boton
 			boton.setAttribute("id","caja-boton");
+			boton.onclick = function(){//con esto funciona al hacer click
+ 			alert("hellou");}
 			//document.getElementById("caja-boton").onclick();
 			//boton.setAttribute("onclick");
 			boton.innerText = "comentar";//texto que mostrara el boton
