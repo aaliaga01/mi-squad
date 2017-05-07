@@ -4,44 +4,42 @@ function nuevoMiembro(nombre,edad,hobbie){
 	this.hobbie=hobbie;
 }
 
-
+//-----------------------------Se agregan los miembros de mi squad
 var miSquad=[];
 
-	var gaby = new nuevoMiembro("gaby",28,"pintar");
+	var gaby = new nuevoMiembro("Gaby Bravo",28,["Pintar"," Ver animes"," Jugar Aion"]);
 	miSquad.push(gaby);
 
-	var karina = new nuevoMiembro("Karina",21,"bailar");
+	var karina = new nuevoMiembro("Karina Laroze",21,["Bailar"]);
 	miSquad.push(karina);
 
-	var mily = new nuevoMiembro("mily",18,"ver peliculas");
+	var mily = new nuevoMiembro("Mily Rivas",18,["Leer"," Ver películas"]);
 	miSquad.push(mily);
 
-	var marcela = new nuevoMiembro("marcela",31,"bicicleta");
+	var marcela = new nuevoMiembro("Marcela Orellana",31,["Andar en bicicleta"," Ver series coreanas"]);
 	miSquad.push(marcela);
 
-	var patricia = new nuevoMiembro("patricia",28,"cantar");
+	var patricia = new nuevoMiembro("Patricia Zavala",28,["Cantar"]);
 	miSquad.push(patricia);
 
-document.getElementById("contenedor").innerHTML=miSquad.length;
-var pantalla = document.getElementById("contenedor");
 
+//----------------------------creando elementos html con DOM
+
+//Referencia al contenedor principal en HTML donde se imprimiran los datos
+var contenedor = document.getElementById("contenedor");
+
+//Se crea el titulo 
+var h1 = document.createElement("h1");
+h1.innerHTML = "Las Pochoclos";
+contenedor.appendChild(h1);
+
+//Se crea contenedor div para cada miembro
 miSquad.forEach(function(el){
-		pantalla.innerHTML += "<p> Nombre: " + el.nombre + "</p>"
-		+ "<p> Edad: " + el.edad + "</p>" + "<p> Hobbie: " + el.hobbie + "</p>" + "</br>"
+		var divMiembro = document.createElement("div");
+			divMiembro.innerHTML="";
+			contenedor.appendChild(divMiembro);
 
+		divMiembro.innerHTML += "<p> Nombre: " + el.nombre + "</br>"
+		+ "Edad: " + el.edad + " años" + "</br>" + "Hobbie: " + el.hobbie + "</p>"
+		+ "<hr>"
 		});
-
-
-
-
-/*
-var titulo = document.getElementById("lista");//aqui se va imprimir
-	elementos.forEach(function(valor){ // forEach +  para que recorra
-      titulo.innerHTML += '<li>' + valor.title + '</li>';
-
-
-Gaby Bravo, 28 años, pintar, ver animes y jugar Aion
-Karina laroze, 21 años, bailar
-Mily Rivas, 18 recién cumplidos, leer, ver películas
-Marcela Orellana, 31 años, andar en bicicleta, ver series coreanas.
-Patricia Zavala, 28 años, cantar*/
